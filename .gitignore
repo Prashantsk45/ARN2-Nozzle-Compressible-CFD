@@ -1,0 +1,6 @@
+# MS Office temp files
+~$*
+# Temp locks
+*.lock
+# Log files
+*.log
