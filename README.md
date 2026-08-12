@@ -19,8 +19,9 @@ The physical setup consists of a circular, converging nozzle discharging a subso
 * **Reference Nozzle Radius ($R_{ref}$):** $1.0\text{ inch}$ ($25.4\text{ mm}$)
 * **Computational Domain:** Extends $-12.5\text{ inches}$ upstream of the nozzle exit to $80\text{ inches}$ ($40 D_j$) downstream, with a radial boundary extending $50\text{ inches}$ to model free-jet expansion.
 
-Below is the official reference geometry profile, coordinate layout, and boundaries diagram from the NASA Turbulence Modeling Resource:
-![NASA TMR Reference Case Geometry](nasa_tmr_grid_config_reference.png)
+<p align="center">
+  <img src="nasa_tmr_grid_config_reference.png" width="70%" alt="NASA TMR Reference Case Geometry" />
+</p>
 
 ### Fluid Properties & Flow Conditions
 * **Working Fluid:** Air (Ideal Gas, dynamic viscosity modeled via Sutherland's law)
@@ -65,7 +66,9 @@ To establish grid convergence, three structured meshes were generated using nest
 * **Fine Mesh:** $214,900\text{ cells}$
 
 Below is a detailed bounding box view of the structured hex mesh layout across the free-jet expansion domain:
-![Structured Computational Mesh Grid](computational_grid_domain.jpg)
+<p align="center">
+  <img src="computational_grid_domain.jpg" width="80%" alt="Structured Computational Mesh Grid" />
+</p>
 
 ### Grid Convergence Findings
 * **SST $k$-$\omega$ Robustness:** The SST model demonstrates extreme robustness to mesh density, showing a mean velocity difference of only **0.73%** between the Coarse and Fine grids.
@@ -84,16 +87,17 @@ CFD centerline velocity predictions ($U/U_j$ vs. $X/D_j$) were validated against
 
 ### Flow Visualization (Mach Number Contours)
 The development of the jet shear layer and the velocity decay downstream are shown in the contours below:
-* **Full-Domain Contours:**
-  ![Mach Number Contours (Full Domain)](mach_contours_full_domain.jpg)
-* **Close-up Nozzle Exit Plume:**
-  ![Mach Number Contours (Close-up)](mach_contours_close_up.jpg)
+<p align="center">
+  <img src="mach_contours_full_domain.jpg" width="49%" alt="Full Domain Contours" />
+  <img src="mach_contours_close_up.jpg" width="49%" alt="Close-up Nozzle Exit Plume" />
+</p>
 
 ### Solver Convergence & Wall Validation
-* **Residual History:**
-  ![Residual Convergence History](residual_convergence_history.jpg)
-* **Wall Boundary Layer Distribution (SST k-omega):**
-  ![Wall y+ Distribution (SST k-omega)](sst_wall_yplus_distribution.jpg)
+The solver convergence residuals and boundary layer resolution are shown below:
+<p align="center">
+  <img src="residual_convergence_history.jpg" width="49%" alt="Residual Convergence History" />
+  <img src="sst_wall_yplus_distribution.jpg" width="49%" alt="Wall y+ Distribution (SST k-omega)" />
+</p>
 
 ### Key Observations
 * **Turbulence Model Accuracy:** Near the nozzle exit ($X/D_j < 5.0$), both models show exceptional agreement with experimental data (errors under 2.2%). Downstream in the mixing layer decay region ($X/D_j > 10.0$), the **SST $k$-$\omega$ model** is significantly more accurate, predicting shear layer mixing with a MAPE of **12.06%** compared to **27.00%** for the SA model, which overpredicts jet dissipation.
